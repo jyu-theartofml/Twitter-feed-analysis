@@ -4,7 +4,7 @@
 
 ## Word2Vec ##
 <p> Word2Vec is distributed word vector that encapsulates the semantics of each word (see Fig 1 below). By finding the word vector of each word in the sentence and taking the average (or weighted average), the meaning of the sentence can be represented in vector form. In this dataset, each line of the <i>text</i> column is parsed and only words and hashtage terms are selected (excluding weird characters). Using NLTK package, the stop words are removed before training word2vec on the data. For any given word in the trained data, the word2vec from Gensim creates a similarity or dissimilarity matrix that shows a list of other words. After taking the average of the word vectors, RandomForestClassifier is used for model training. But since there isn't a lot of vocabs to train on, Word2vec didn't work too well in prediction accuracy. For comparison, GloVe is a globally pretrained word2vec package using Wikipedia texts, and available through Spacy. It would be worthwhile to try it on this data.</p>
-<p>UPDATE: GloVe vectors were used to process the data, and Multilayer perceptron model performed best in 5-fold CV (see airline-Glove.ipynb file).</p>
+<p>UPDATE: GloVe vectors were used to process the data, and Multilayer perceptron model performed best in 5-fold CV (see airline-Glove.ipynb file) resulting in accuracy of 80% which's a significant improvement from previous attempts!</p>
 <p align="center"><img src='word2vec-distributed-representation.png'><br> Fig 1. source:https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/ ></p>
 
 ## Bag-of-words ngrams ##
